@@ -18,7 +18,10 @@ export function Contact() {
         viewport={{ amount: 0.4 }}
       >
         <div className="contact-details">
-          <p><span>Email</span>{contact.email}</p>
+          <p>
+            <span>Email</span>
+            <a href={`mailto:${contact.email}`}>{contact.email}</a>
+          </p>
           <p><span>Phone</span>{contact.phone}</p>
           <p><span>Location</span>{contact.location}</p>
         </div>

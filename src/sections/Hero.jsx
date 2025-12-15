@@ -47,7 +47,7 @@ export function Hero() {
             <span className="hero-core-glow" aria-hidden="true" />
             <div className="hero-scan" aria-hidden="true" />
             <div className="hero-core-content">
-              <span className="hero-core-label">{hero.badge}</span>
+              {hero.badge ? <span className="hero-core-label">{hero.badge}</span> : null}
               {hero.photo && (
                 <div className="hero-photo-frame">
                   <div className="hero-photo">
@@ -64,7 +64,7 @@ export function Hero() {
                 </div>
               )}
               <p>{hero.punchline}</p>
-              <span className="hero-core-meta">{hero.meta}</span>
+              <span className="hero-core-label hero-core-meta-pill">{hero.meta}</span>
             </div>
           </div>
         </motion.div>

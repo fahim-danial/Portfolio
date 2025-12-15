@@ -8,7 +8,7 @@ export const hero = {
   punchline:
     'Backend-focused SWE student turning contest-grade algorithms into reliable, real-world systems.',
   summary:
-    'Proactive Software Engineering student at Daffodil International University (CGPA 3.8/4.0) who loves building database-backed web apps, tuning backend performance, and translating contest intuition into production-ready logic.',
+    'Proactive Software Engineering student at Daffodil International University who loves building database-backed web apps, tuning backend performance, and translating contest intuition into production-ready logic.',
   actions: [
     { label: 'View Résumé', href: '/resume.pdf', variant: 'solid', target: '_blank' },
     { label: 'Say Hello', href: '#contact', variant: 'ghost' },

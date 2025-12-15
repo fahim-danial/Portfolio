@@ -32,7 +32,7 @@ export function About() {
           transition={{ duration: 0.6 }}
           viewport={{ amount: 0.45 }}
         >
-          Hello! I’m Md. Fahim Abdullah Danial, a Software Engineering student who loves taking messy requirements and structuring them into reliable backends. I translate contest discipline into clean data layers, monitored services, and developer-friendly documentation that teams can trust.
+          Hello! I’m Md. Fahim Abdullah Danial, a Software Engineering student who loves taking messy requirements and structuring them into reliable backends. I bring contest discipline into production by building clean data layers, monitored services, and developer-friendly documentation that teams can trust.
         </motion.p>
         <div className="about-cards">
           {focusAreas.map((area, index) => (

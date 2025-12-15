@@ -2,7 +2,7 @@ export const hero = {
   name: 'Md. Fahim Abdullah Danial',
   title: 'Backend Developer · Competitive Programmer',
   badge: '',
-  meta: 'APIs · Data · Reliability',
+  meta: 'APIs\u00A0·\u00A0Data\u00A0·\u00A0Reliability',
   photo: '/profile.jpeg',
   photoAlt: 'Md. Fahim Abdullah Danial portrait',
   punchline:

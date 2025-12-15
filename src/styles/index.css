@@ -336,8 +336,16 @@ main {
 .hero-core-meta-pill {
   margin-top: 0.35rem;
   white-space: nowrap;
-  letter-spacing: 0.18rem;
-  font-size: 0.72rem;
+  letter-spacing: 0.14rem;
+  font-size: 0.7rem;
+}
+
+@media (max-width: 420px) {
+  .hero-core-meta-pill {
+    letter-spacing: 0.1rem;
+    font-size: 0.66rem;
+    padding: 0.35rem 0.9rem;
+  }
 }
 
 .hero-photo {

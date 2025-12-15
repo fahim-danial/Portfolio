@@ -1,4 +1,4 @@
-# Fahim Abdullah Danial — Rain-Glow Portfolio
+# Fahim Abdullah Danial — Portfolio
 
 Front-end only portfolio crafted with Vite + React, featuring dark rain-green glassmorphism aesthetics, cinematic motion, and responsive layouts.
 

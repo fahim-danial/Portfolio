@@ -243,10 +243,12 @@ main {
 
 .hero-core {
   position: relative;
+  isolation: isolate;
   width: clamp(260px, 42vw, 360px);
   padding: 2.8rem;
   border-radius: 34px;
-  backdrop-filter: blur(30px);
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
   border: 1px solid rgba(126, 247, 197, 0.25);
   background: radial-gradient(circle at 25% 25%, rgba(126, 247, 197, 0.25), rgba(4, 24, 22, 0.7)),
     linear-gradient(160deg, rgba(8, 36, 32, 0.95), rgba(1, 10, 9, 0.9));
@@ -257,10 +259,13 @@ main {
 .hero-core::before {
   content: '';
   position: absolute;
-  inset: 1px;
+  inset: 0;
   border-radius: inherit;
-  border: 1px solid rgba(126, 247, 197, 0.1);
-  opacity: 0.5;
+  background: rgba(5, 26, 23, 0.25);
+  backdrop-filter: blur(30px);
+  -webkit-backdrop-filter: blur(30px);
+  z-index: 0;
+  pointer-events: none;
 }
 
 .hero-core::after {
@@ -280,10 +285,12 @@ main {
   background: radial-gradient(circle, rgba(126, 247, 197, 0.2), transparent 55%);
   filter: blur(40px);
   opacity: 0.8;
+  z-index: 0;
 }
 
 .hero-core-content {
   position: relative;
+  z-index: 1;
   text-align: center;
   display: flex;
   flex-direction: column;

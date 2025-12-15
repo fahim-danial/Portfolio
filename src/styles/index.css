@@ -750,6 +750,10 @@ main {
 
 /* Responsive tweaks */
 @media (max-width: 720px) {
+  :root {
+    --blur: 18px;
+  }
+
   .floating-nav {
     top: 1rem;
   }
@@ -760,6 +764,51 @@ main {
 
   .nav-inner {
     justify-content: space-between;
+    backdrop-filter: none;
+  }
+
+  .rainfield {
+    display: none;
+  }
+
+  .hero-ring {
+    animation: none;
+    filter: none;
+  }
+
+  .hero-scan {
+    animation: none;
+  }
+
+  .hero-core-glow {
+    filter: blur(24px);
+    opacity: 0.6;
+  }
+
+  .hero-photo-glow {
+    filter: blur(18px);
+    opacity: 0.45;
+  }
+
+  .highlight-card {
+    backdrop-filter: none;
+  }
+
+  .highlight-card::after {
+    filter: none;
+  }
+
+  .glass-card {
+    backdrop-filter: none;
+  }
+
+  .project-glow {
+    filter: none;
+    opacity: 0.45;
+  }
+
+  .dot-list li::before {
+    box-shadow: none;
   }
 
   .contact-details p {

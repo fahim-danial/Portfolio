@@ -8,7 +8,7 @@ export function Experience() {
       <SectionHeading
         eyebrow="Education"
         title="Software Engineering at DIU"
-        description="Coursework, labs, and collaborative projects that built my backend foundation and product instincts."
+        description="Focused coursework, hands-on labs, and team projects that strengthened my backend fundamentals, product thinking, and delivery discipline."
       />
       <div className="experience-grid">
         {experiences.map((entry, index) => (

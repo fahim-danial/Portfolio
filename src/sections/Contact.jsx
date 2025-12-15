@@ -7,7 +7,7 @@ export function Contact() {
     <section id="contact" className="section contact-section">
       <SectionHeading
         eyebrow="Stay in touch"
-        title="Let’s build dependable backends together"
+        title="Let’s connect"
         description="Share a dataset, API spec, or contest-style problem—I'm ready to turn it into a scalable solution."
       />
       <motion.div

@@ -1,8 +1,8 @@
 export const hero = {
   name: 'Md. Fahim Abdullah Danial',
   title: 'Backend Developer · Competitive Programmer',
-  badge: '',
-  meta: 'APIs\u00A0·\u00A0Data\u00A0·\u00A0Reliability',
+  badge: 'Backend Craft',
+  meta: 'APIs · Data · Reliability',
   photo: '/profile.jpeg',
   photoAlt: 'Md. Fahim Abdullah Danial portrait',
   punchline:
@@ -86,6 +86,7 @@ export const contact = {
   socials: [
     { label: 'LinkedIn', href: 'https://www.linkedin.com/in/fahim-danial', handle: 'in/fahim-danial' },
     { label: 'GitHub', href: 'https://github.com/fahim-danial', handle: 'fahim-danial' },
+    { label: 'LeetCode', href: 'https://leetcode.com/u/Danial-/', handle: 'Danial-' },
     { label: 'Codeforces', href: 'https://codeforces.com/profile/Danial.', handle: 'Danial.' },
     { label: 'Codechef', href: 'https://www.codechef.com/users/quiyou', handle: 'quiyou' },
     { label: 'Atcoder', href: 'https://atcoder.jp/users/DAN1AL', handle: 'DAN1AL' },

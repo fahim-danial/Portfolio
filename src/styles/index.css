@@ -391,12 +391,12 @@ main {
   .hero-photo-frame:hover .hero-photo-img {
     transform: scale(1.12);
   }
-}
 
-.hero-photo-frame:hover {
-  border-color: rgba(126, 247, 197, 0.55);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06), 0 26px 80px rgba(0, 0, 0, 0.42);
-  transform: translateZ(0) scale(1.07);
+  .hero-photo-frame:hover {
+    border-color: rgba(126, 247, 197, 0.55);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06), 0 26px 80px rgba(0, 0, 0, 0.42);
+    transform: translateZ(0) scale(1.07);
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -752,6 +752,16 @@ main {
 @media (max-width: 720px) {
   :root {
     --blur: 18px;
+  }
+
+  .hero-core {
+    width: min(92vw, 360px);
+    padding: 2.2rem 1.6rem;
+  }
+
+  .hero-photo-frame {
+    width: min(240px, 70vw);
+    height: min(240px, 70vw);
   }
 
   .floating-nav {

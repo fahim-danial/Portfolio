@@ -37,8 +37,8 @@ export function Hero() {
         </motion.div>
         <motion.div
           className="hero-visual"
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
+          initial={{ opacity: 0, y: 24 }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.1, ease: 'easeOut' }}
         >
           <span className="hero-ring hero-ring-outer" aria-hidden="true" />
@@ -55,7 +55,8 @@ export function Hero() {
                       className="hero-photo-img"
                       src={hero.photo}
                       alt={hero.photoAlt || `${hero.name} portrait`}
-                      loading="lazy"
+                      loading="eager"
+                      fetchPriority="high"
                       decoding="async"
                     />
                   </div>

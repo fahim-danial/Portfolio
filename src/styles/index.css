@@ -348,6 +348,8 @@ main {
   display: block;
   border-radius: inherit;
   image-rendering: auto;
+  transform: translateZ(0);
+  backface-visibility: hidden;
 }
 
 .hero-photo-glow {

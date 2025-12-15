@@ -50,12 +50,15 @@ export function Hero() {
               <span className="hero-core-label">{hero.badge}</span>
               {hero.photo && (
                 <div className="hero-photo-frame">
-                  <div
-                    className="hero-photo"
-                    role="img"
-                    aria-label={hero.photoAlt || `${hero.name} portrait`}
-                    style={{ backgroundImage: `url(${hero.photo})` }}
-                  />
+                  <div className="hero-photo">
+                    <img
+                      className="hero-photo-img"
+                      src={hero.photo}
+                      alt={hero.photoAlt || `${hero.name} portrait`}
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  </div>
                   <span className="hero-photo-glow" aria-hidden="true" />
                 </div>
               )}

@@ -69,8 +69,9 @@ export const experiences = [
   {
     company: 'Daffodil International University',
     title: 'BSc Software Engineering Student',
-    period: '2022 — Present',
+    period: '2022 — 2025 (Expected)',
     bullets: [
+      'Expected graduation: 2025.',
       'Maintaining a 3.8/4.0 CGPA while concentrating on backend engineering, database design, and clean architecture.',
       'Built coursework projects with Django, React, and MySQL to emulate real-world web application stacks.',
       'Collaborate with classmates to review algorithms, share notes, and keep everyone ready for labs and project demos.',

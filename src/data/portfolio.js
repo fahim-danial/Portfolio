@@ -16,10 +16,10 @@ export const hero = {
 };
 
 export const highlights = [
-  { label: 'Problems Solved', value: '1800+ ' },
-  { label: 'CGPA', value: '3.8 / 4.0 ' },
-  { label: 'Codeforces Rank', value: 'Specialist ' },
-  { label: 'Codechef Max', value: '1759 (Blue) ' },
+  { label: 'Problems Solved', value: '1800+' },
+  { label: 'CGPA', value: '3.8 / 4.0' },
+  { label: 'Codeforces Rank', value: 'Specialist' },
+  { label: 'Codechef Max', value: '1759 (Blue)' },
 ];
 
 export const skillGroups = [
@@ -29,11 +29,11 @@ export const skillGroups = [
   },
   {
     title: 'Frameworks & Libraries',
-    items: ['Django', 'ReactJS'],
+    items: ['Flask', 'Django', 'ReactJS'],
   },
   {
     title: 'Databases & Tools',
-    items: ['MySQL', 'Git', 'GitHub'],
+    items: ['SQLite', 'MySQL', 'Git', 'GitHub'],
   },
   {
     title: 'Core Strengths',

@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { hero } from '../data/portfolio.js';
 import { HighlightGrid } from '../components/HighlightGrid.jsx';
+import { TypingText } from '../components/TypingText.jsx';
 
 export function Hero() {
   return (
@@ -15,7 +16,9 @@ export function Hero() {
           <p className="eyebrow">Available for collaboration · 2025</p>
           <h1>
             {hero.name}
-            <span>{hero.title}</span>
+            <span>
+              <TypingText text={hero.title} startDelayMs={350} charDelayMs={28} />
+            </span>
           </h1>
           <p className="section-copy">{hero.summary}</p>
           <div className="hero-actions">

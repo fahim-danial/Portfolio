@@ -181,6 +181,30 @@ main {
   color: var(--accent);
 }
 
+.typing {
+  display: inline-flex;
+  align-items: baseline;
+}
+
+.typing-cursor {
+  width: 0.7ch;
+  border-left: 2px solid var(--accent);
+  margin-left: 0.2rem;
+  animation: typing-caret 900ms steps(1) infinite;
+  letter-spacing: normal;
+}
+
+@keyframes typing-caret {
+  0%,
+  50% {
+    opacity: 1;
+  }
+  50.01%,
+  100% {
+    opacity: 0;
+  }
+}
+
 .hero-actions {
   display: flex;
   flex-wrap: wrap;

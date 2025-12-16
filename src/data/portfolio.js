@@ -10,7 +10,7 @@ export const hero = {
   summary:
     'Proactive Software Engineering student at Daffodil International University who loves building database-backed web apps, tuning backend performance, and translating contest intuition into production-ready logic.',
   actions: [
-    { label: 'View Résumé', href: '/resume.pdf', variant: 'solid', target: '_blank' },
+    { label: 'View Résumé', href: '/resume.pdf?v=20251216', variant: 'solid', target: '_blank' },
     { label: 'Say Hello', href: '#contact', variant: 'ghost' },
   ],
 };

@@ -11,9 +11,19 @@
           "value": "no-store"
         }
       ]
+    },
+    {
+      "source": "/Resume.pdf",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "no-store"
+        }
+      ]
     }
   ],
   "routes": [
+    { "src": "/resume.pdf", "dest": "/Resume.pdf" },
     { "handle": "filesystem" },
     { "src": "/.*", "dest": "/index.html" }
   ]

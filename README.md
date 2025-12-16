@@ -40,8 +40,8 @@ Update `src/data/portfolio.js` with your latest stats, projects, and socials to 
 
 ## Résumé link
 
-- `public/resume.pdf` is a placeholder so the “View Résumé” button can open a PDF in a new tab.
-- Replace that file with your exported résumé (same filename) or point the hero action in `src/data/portfolio.js` to a hosted URL/database download endpoint.
+- `public/Resume.pdf` is the résumé file that the “View Résumé” button opens in a new tab.
+- Replace that file with your exported résumé (same filename) or point the hero action in `src/data/portfolio.js` to a hosted URL.
 
 ## Hero portrait
 

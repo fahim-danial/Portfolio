@@ -17,7 +17,7 @@ export function Hero() {
           <h1>
             {hero.name}
             <span>
-              <TypingText text={hero.title} startDelayMs={350} charDelayMs={28} />
+              <TypingText text={hero.title} startDelayMs={900} charDelayMs={55} />
             </span>
           </h1>
           <p className="section-copy">{hero.summary}</p>

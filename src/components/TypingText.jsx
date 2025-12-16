@@ -1,27 +1,4 @@
-import { useEffect, useState } from 'react';
-
-function usePrefersReducedMotion() {
-  const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
-
-  useEffect(() => {
-    if (typeof window === 'undefined' || !window.matchMedia) return;
-
-    const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
-
-    const update = () => setPrefersReducedMotion(Boolean(mediaQuery.matches));
-    update();
-
-    if (typeof mediaQuery.addEventListener === 'function') {
-      mediaQuery.addEventListener('change', update);
-      return () => mediaQuery.removeEventListener('change', update);
-    }
-
-    mediaQuery.addListener(update);
-    return () => mediaQuery.removeListener(update);
-  }, []);
-
-  return prefersReducedMotion;
-}
+import { motion } from 'framer-motion';
 
 export function TypingText({
   text,
@@ -30,43 +7,45 @@ export function TypingText({
   className,
   showCursor = true,
 }) {
-  const prefersReducedMotion = usePrefersReducedMotion();
-  const [visibleCount, setVisibleCount] = useState(prefersReducedMotion ? text.length : 0);
+  const characters = Array.from(text);
 
-  useEffect(() => {
-    if (prefersReducedMotion) {
-      setVisibleCount(text.length);
-      return;
-    }
+  const container = {
+    hidden: {},
+    show: {
+      transition: {
+        delayChildren: startDelayMs / 1000,
+        staggerChildren: Math.max(0.01, charDelayMs / 1000),
+      },
+    },
+  };
 
-    setVisibleCount(0);
-
-    let cancelled = false;
-    let timeoutId;
-
-    const tick = (nextCount) => {
-      if (cancelled) return;
-
-      setVisibleCount(nextCount);
-
-      if (nextCount >= text.length) return;
-      timeoutId = window.setTimeout(() => tick(nextCount + 1), charDelayMs);
-    };
-
-    timeoutId = window.setTimeout(() => tick(1), startDelayMs);
-
-    return () => {
-      cancelled = true;
-      window.clearTimeout(timeoutId);
-    };
-  }, [text, startDelayMs, charDelayMs, prefersReducedMotion]);
-
-  const shownText = text.slice(0, visibleCount);
+  const character = {
+    hidden: {
+      opacity: 0,
+      y: '0.18em',
+      filter: 'blur(8px)',
+    },
+    show: {
+      opacity: 1,
+      y: 0,
+      filter: 'blur(0px)',
+      transition: {
+        duration: 0.22,
+        ease: 'easeOut',
+      },
+    },
+  };
 
   return (
     <span className={['typing', className].filter(Boolean).join(' ')} aria-label={text}>
-      <span aria-hidden="true">{shownText}</span>
-      {showCursor && !prefersReducedMotion ? <span className="typing-cursor" aria-hidden="true" /> : null}
+      <motion.span variants={container} initial="hidden" animate="show" aria-hidden="true">
+        {characters.map((ch, index) => (
+          <motion.span key={`${ch}-${index}`} variants={character}>
+            {ch === ' ' ? '\u00A0' : ch}
+          </motion.span>
+        ))}
+      </motion.span>
+      {showCursor ? <span className="typing-cursor" aria-hidden="true" /> : null}
     </span>
   );
 }

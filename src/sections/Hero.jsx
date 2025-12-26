@@ -1,11 +1,40 @@
-import { motion } from 'framer-motion';
+import { motion, useReducedMotion } from 'framer-motion';
 import { hero } from '../data/portfolio.js';
 import { HighlightGrid } from '../components/HighlightGrid.jsx';
 import { TypingText } from '../components/TypingText.jsx';
 
-export function Hero() {
+export function Hero({ isActive = false }) {
+  const shouldReduceMotion = useReducedMotion();
+
+  const coreContainer = {
+    hidden: {},
+    show: {
+      transition: {
+        staggerChildren: shouldReduceMotion ? 0 : 0.12,
+        delayChildren: shouldReduceMotion ? 0 : 0.08,
+      },
+    },
+  };
+
+  const coreItem = {
+    hidden: {
+      opacity: 0,
+      y: shouldReduceMotion ? 0 : 12,
+      filter: shouldReduceMotion ? 'blur(0px)' : 'blur(8px)',
+    },
+    show: {
+      opacity: 1,
+      y: 0,
+      filter: 'blur(0px)',
+      transition: {
+        duration: shouldReduceMotion ? 0 : 0.7,
+        ease: 'easeOut',
+      },
+    },
+  };
+
   return (
-    <section id="hero" className="section hero-section">
+    <section id="hero" className={`section hero-section${isActive ? ' is-highlighted' : ''}`}>
       <div className="hero-grid">
         <motion.div
           className="hero-copy"
@@ -49,10 +78,15 @@ export function Hero() {
           <div className="hero-core">
             <span className="hero-core-glow" aria-hidden="true" />
             <div className="hero-scan" aria-hidden="true" />
-            <div className="hero-core-content">
-              {hero.badge ? <span className="hero-core-label">{hero.badge}</span> : null}
+            <motion.div className="hero-core-content" variants={coreContainer} initial="hidden" animate="show">
+              {hero.badge ? (
+                <motion.span className="hero-core-label" variants={coreItem}>
+                  {hero.badge}
+                </motion.span>
+              ) : null}
+
               {hero.photo && (
-                <div className="hero-photo-frame">
+                <motion.div className="hero-photo-frame" variants={coreItem}>
                   <div className="hero-photo">
                     <img
                       className="hero-photo-img"
@@ -64,11 +98,17 @@ export function Hero() {
                     />
                   </div>
                   <span className="hero-photo-glow" aria-hidden="true" />
-                </div>
+                </motion.div>
               )}
-              <p>{hero.punchline}</p>
-              <span className="hero-core-label hero-core-meta-pill">{hero.meta}</span>
-            </div>
+
+              <motion.p className="hero-punchline" variants={coreItem}>
+                {hero.punchline}
+              </motion.p>
+
+              <motion.span className="hero-core-label hero-core-meta-pill" variants={coreItem}>
+                {hero.meta}
+              </motion.span>
+            </motion.div>
           </div>
         </motion.div>
       </div>

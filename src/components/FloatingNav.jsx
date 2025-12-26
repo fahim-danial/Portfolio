@@ -22,9 +22,6 @@ export function FloatingNav() {
   return (
     <header className={`floating-nav ${scrolled ? 'is-scrolled' : ''}`}>
       <div className="nav-inner">
-        <a className="nav-logo" href="#hero" aria-label="Back to top">
-          FD
-        </a>
         <nav className="nav-links">
           {navLinks.map((link) => (
             <a key={link.href} href={link.href}>

@@ -16,9 +16,16 @@ const focusAreas = [
   // },
 ];
 
-export function About() {
+export function About({ isActive = false }) {
   return (
-    <section id="about" className="section">
+    <motion.section
+      id="about"
+      className={`section${isActive ? ' is-highlighted' : ''}`}
+      initial={{ opacity: 0, x: -26 }}
+      whileInView={{ opacity: 1, x: 0 }}
+      transition={{ duration: 0.75, ease: 'easeOut' }}
+      viewport={{ amount: 0.2 }}
+    >
       <SectionHeading
         eyebrow="Origin Story"
         // title="Backend-first student builder"
@@ -50,6 +57,6 @@ export function About() {
           ))}
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 }

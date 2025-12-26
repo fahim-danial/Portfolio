@@ -1,11 +1,23 @@
-import { motion } from 'framer-motion';
+import { motion, useReducedMotion } from 'framer-motion';
 
 export function ProjectCard({ project, index }) {
+  const shouldReduceMotion = useReducedMotion();
+
   return (
     <motion.article
       className="project-card"
       initial={{ opacity: 0, y: 40 }}
       whileInView={{ opacity: 1, y: 0 }}
+      whileHover={
+        shouldReduceMotion
+          ? undefined
+          : {
+              y: -10,
+              scale: 1.01,
+              transition: { type: 'spring', stiffness: 220, damping: 20 },
+            }
+      }
+      whileTap={shouldReduceMotion ? undefined : { scale: 0.995 }}
       transition={{ delay: index * 0.12, duration: 0.7, ease: 'easeOut' }}
       viewport={{ amount: 0.35 }}
     >
